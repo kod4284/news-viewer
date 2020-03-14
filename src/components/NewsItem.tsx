@@ -9,15 +9,15 @@ const NewsItemBlock = styled.div`
     img {
       display: block;
       width: 10rem;
-      height: 10rem;
+      height: 6.25rem;
       object-fit: cover;
     }
-    .contents {
-      h2 {
-        margin: 0;
-        a {
-          color: black;
-        }
+  }
+  .contents {
+    h2 {
+      margin: 0;
+      a {
+        color: black;
       }
       p {
         margin: 0;
@@ -26,15 +26,16 @@ const NewsItemBlock = styled.div`
         white-space: normal;
       }
     }
-    & + & {
-      margin-top: 3rem;
-    }
+  }
+  & + & {
+    margin-top: 3rem;
   }
 `;
 function NewsItem({ article }: NewsArticle) {
   const {
     title, description, url, urlToImage,
   } = article;
+
   return (
     <NewsItemBlock>
       {urlToImage && (
@@ -44,6 +45,14 @@ function NewsItem({ article }: NewsArticle) {
           </a>
         </div>
       )}
+      <div className="contents">
+        <h2>
+          <a href={url} target="_blank" rel="noopener noreferrer">
+            {title}
+          </a>
+          <p>{description}</p>
+        </h2>
+      </div>
     </NewsItemBlock>
   );
 }

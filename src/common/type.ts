@@ -12,3 +12,8 @@ export interface NewsArticle {
 export interface NewsArticleProps {
   article: NewsArticle
 }
+
+export interface CategoryProps {
+  category: string,
+  onSelect: Function,
+}

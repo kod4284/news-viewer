@@ -3,12 +3,12 @@ import { Route, Switch } from 'react-router-dom';
 import About from '@/pages/about';
 import Home from '@/pages/home';
 import NewsList from '@/components/NewsList';
-import Categories from '@/components/Categories';
+import Header from '@/components/Header';
 
 function App() {
   return (
     <div>
-      <Route path="/" component={Categories} />
+      <Route path="/" component={Header} />
       <Switch>
         <Route exact path="/" component={NewsList} />
         <Route exact path="/home" component={Home} />

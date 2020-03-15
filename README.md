@@ -1,6 +1,10 @@
 ## Description
 
-This is a boilerplate composed by creact-react-app-typescript with craco absolute path setting, ts-lint.
+This is a news viewer application. There are totally six categories you can read -- Business, Entertainment, Health, Science, Sports, Tech.
+
+## installation
+
+First, go to <https://newsapi.org/> and register to get api key. Clone this project, make **.env** file in the root directory and copy paste the api key to .env file by following the format ```REACT_APP_NEWS_VIEWER_API_KEY = "<your_api_key_here>"```. Then, ```yarn start or npm start```.
 
 ## Available Scripts
 

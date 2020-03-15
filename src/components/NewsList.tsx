@@ -4,6 +4,7 @@ import NewsItem from '@/components/NewsItem';
 import usePromise from '@/lib/usePromise';
 import axios from 'axios';
 import { Category, ArticleProps } from '@/common/type';
+import 'dotenv/config';
 
 const NewsListBlock = styled.div`
   box-sizing: border-box;
@@ -22,10 +23,9 @@ function NewsList({ category }: Category) {
   const [loading, response, error] = usePromise(() => {
     const query = category === 'all' ? '' : `&category=${category}`;
     return axios.get(
-      `http://newsapi.org/v2/top-headlines?country=us${query}&apiKey=f4b94e625e1c4aac8fa23eeab1ad85d2`,
+      `http://newsapi.org/v2/top-headlines?country=us${query}&apiKey=${process.env.REACT_APP_NEWS_VIEWER_API_KEY}`,
     );
   }, [category]);
-
   if (loading) {
     return <NewsListBlock>Loading...</NewsListBlock>;
   }

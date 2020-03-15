@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { CategoryProps } from '@/common/type';
 
 const categories = [
@@ -55,6 +55,15 @@ const Category = styled.div<{ active: boolean }>`
   &:hover {
     color: #495057;
   }
+
+  ${props => props.active && css`
+      font-weight: 600;
+      border-bottom: 2px solid #22b8cf;
+      color: #22b8cf;
+      &:hover {
+        color: #3bc9db;
+      }
+    `}
 
   & + & {
     margin-left: 1rem;

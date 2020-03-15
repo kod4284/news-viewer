@@ -3,13 +3,15 @@ import { Route, Switch } from 'react-router-dom';
 import About from '@/pages/about';
 import Home from '@/pages/home';
 import NewsList from '@/components/NewsList';
+import Categories from '@/components/Categories';
 
 function App() {
   return (
     <div>
+      <Route path="/" component={Categories} />
       <Switch>
         <Route exact path="/" component={NewsList} />
-        <Route exact path="home" component={Home} />
+        <Route exact path="/home" component={Home} />
         <Route exact path="/about" component={About} />
       </Switch>
     </div>

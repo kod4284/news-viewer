@@ -31,3 +31,21 @@ export interface Match<P> {
   path: string;
   url: string;
 }
+
+export interface Article {
+  source: {
+    id: boolean,
+    name: string,
+  },
+  author: null,
+  title: string,
+  description: string,
+  url: string,
+  urlToImage: string,
+  publishedAt: string,
+  content: string
+}
+
+export interface ArticleProps {
+  articles: Array<Article>
+}

@@ -3,10 +3,12 @@ export interface Test {
 }
 
 export interface NewsArticle {
-  article: {
-    title: string,
-    description: string,
-    url: string,
-    urlToImage?: string
-  }
+  title: string,
+  description: string,
+  url: string,
+  urlToImage: string
+}
+
+export interface NewsArticleProps {
+  article: NewsArticle
 }
